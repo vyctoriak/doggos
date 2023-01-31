@@ -7,6 +7,7 @@
 }
 
 body {
+  padding-top: 4rem;
   margin: 0;
   color: var(--black);
   --type-first: Helvetica, Arial, sans-serif;
@@ -40,6 +41,10 @@ input {
   font-size: 1rem;
   font-family: var(--type-first);
   color: var(--black);
+}
+
+a {
+  text-decoration: none;
 }
 
 .container {
