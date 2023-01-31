@@ -27,7 +27,7 @@ const LoginForm = () => {
 
   return (
     <section>
-      <h1>Sign in</h1>
+      <h1>Sign in / Entrar</h1>
       <form action="" onSubmit={handleSubmit}>
         <Input label="User" type="text" name="username" />
         <Input label="Password" type="password" name="password" />
