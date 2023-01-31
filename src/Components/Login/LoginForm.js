@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import useForm from '../../hooks/useForm'
 import Button from '../Form/Button'
 import Input from '../Form/Input'
+import { TOKEN_POST } from '../../api'
 
 const LoginForm = () => {
   const username = useForm()
@@ -12,13 +13,12 @@ const LoginForm = () => {
     e.preventDefault()
 
     if (username.validate() && password.validate()) {
-      fetch(`https://dogsapi.origamid.dev/json/jwt-auth/v1/token`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({}),
+      const { url, options } = TOKEN_POST({
+        username: username.value,
+        password: password.value,
       })
+
+      fetch(url, options)
         .then((response) => {
           console.log('RESPONSE =>', response)
           return response.json()
