@@ -4,6 +4,11 @@
 
 :root {
   --black: #333;
+  --yellow: #fb1;
+  --yellow-dark: #764701;
+  --yellow-light: #fea;
+  --border: #eee;
+  --error: #f31;
 }
 
 body {
