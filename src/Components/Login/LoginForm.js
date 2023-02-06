@@ -10,7 +10,7 @@ const LoginForm = () => {
   const username = useForm()
   const password = useForm()
 
-  const { userLogin } = useContext(UserContext)
+  const { userLogin, error, loading } = useContext(UserContext)
 
   async function getUser(token) {
     const { url, options } = USER_GET(token)
@@ -33,7 +33,12 @@ const LoginForm = () => {
       <form action="" onSubmit={handleSubmit}>
         <Input label="User" type="text" name="username" {...username} />
         <Input label="Password" type="password" name="password" {...password} />
-        <Button>Login</Button>
+        {loading ? (
+          <Button disabled>Carregando...</Button>
+        ) : (
+          <Button>Entrar</Button>
+        )}
+        {error && <p>{error}</p>}
       </form>
       <Link to="/login/create">Register</Link>
     </section>
