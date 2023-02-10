@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import useForm from '../../hooks/useForm'
 import Button from '../Form/Button'
@@ -28,7 +28,7 @@ const LoginForm = () => {
   }
 
   return (
-    <section>
+    <section className="animeLeft">
       <h1>Sign in / Entrar</h1>
       <form action="" onSubmit={handleSubmit}>
         <Input label="User" type="text" name="username" {...username} />
