@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import useForm from '../../hooks/useForm'
 import Button from '../Form/Button'
@@ -10,7 +10,7 @@ const LoginForm = () => {
   const username = useForm()
   const password = useForm()
 
-  const { userLogin } = useContext(UserContext)
+  const { userLogin, error, loading } = useContext(UserContext)
 
   async function getUser(token) {
     const { url, options } = USER_GET(token)
@@ -28,12 +28,17 @@ const LoginForm = () => {
   }
 
   return (
-    <section>
-      <h1>Sign in / Entrar</h1>
+    <section className="animeLeft">
+      <h1 className="title">Sign in / Entrar</h1>
       <form action="" onSubmit={handleSubmit}>
         <Input label="User" type="text" name="username" {...username} />
         <Input label="Password" type="password" name="password" {...password} />
-        <Button>Login</Button>
+        {loading ? (
+          <Button disabled>Carregando...</Button>
+        ) : (
+          <Button>Entrar</Button>
+        )}
+        {error && <p>{error}</p>}
       </form>
       <Link to="/login/create">Register</Link>
     </section>
