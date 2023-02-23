@@ -29,7 +29,7 @@ const LoginForm = () => {
 
   return (
     <section className="animeLeft">
-      <h1>Sign in / Entrar</h1>
+      <h1 className="title">Sign in / Entrar</h1>
       <form action="" onSubmit={handleSubmit}>
         <Input label="User" type="text" name="username" {...username} />
         <Input label="Password" type="password" name="password" {...password} />
