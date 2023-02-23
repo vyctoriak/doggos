@@ -9,6 +9,8 @@
   --yellow-light: #fea;
   --border: #eee;
   --error: #f31;
+  --gray: #666;
+  --gray-light: #ddd;
 }
 
 body {
@@ -50,6 +52,7 @@ input {
 
 a {
   text-decoration: none;
+  color: var(--black);
 }
 
 .container {
@@ -85,6 +88,7 @@ a {
   opacity: 0;
   transform: translateX(-20px);
   animation: animeLeft 0.3s forwards;
+  padding: 20px;
 }
 
 @keyframes animeLeft {
